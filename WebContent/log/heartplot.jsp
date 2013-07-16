@@ -35,7 +35,7 @@ $(document).ready(function(){
 		//alert(mydata);
         
 	  	  var plot3 = $.jqplot('chart', mydata, {
-	      title:'VITALS CHART-TEMPERATURE', 
+	      title:'VITALS CHART-HEART RATE', 
 	      axesDefaults: {
 		        labelRenderer: $.jqplot.CanvasAxisLabelRenderer
 		      },
@@ -48,7 +48,7 @@ $(document).ready(function(){
 	        },
 
            yaxis:{
-                 label: 'TEMPERATURE'
+                 label: 'HEART-RATE'
                }
           
 	      },
@@ -69,7 +69,7 @@ String time=null;
 String val=null;
 StringBuffer lSbrValue = new StringBuffer("[");
 int count = 0; 
-rs=db.execSQL("select * from (select creation_time,temperature from bed_side_monitor_tpro where patient_id='b01' ORDER BY creation_time DESC LIMIT 10)A ORDER BY creation_time ASC");
+rs=db.execSQL("select * from (select creation_time,respiration from bed_side_monitor_tpro where patient_id='b01' ORDER BY creation_time DESC LIMIT 10)A ORDER BY creation_time ASC");
 while(rs.next())
 {
 	time=rs.getString(1);

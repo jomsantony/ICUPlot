@@ -16,7 +16,8 @@ public class DbBean {
        InitialContext ic;
   //private Connection dbCon; 
   public DbBean(){  
-   connect();   
+   connect();
+   System.out.println("inside connect");
    } 
   public Connection connect() {
 	  
